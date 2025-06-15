@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System: All colors, fonts, spacing, and other tokens are defined here */
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 100%;
+
+    --font-druk: 'Druk Web Heavy', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+
+    --rounded-main-horizontal: 60px;
+    --rounded-main-vertical: 30px;
+    --rounded-main: var(--rounded-main-horizontal) / var(--rounded-main-vertical);
+    --rounded-main-value: 50px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+}
+
+/* Components Layer */
+@layer components {
+  .hero-text {
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+  }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 69, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #FF4500;
+    transition: width 0.3s ease;
+  }
+
+  .blur-overlay {
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .animate-stagger > * {
+    animation-delay: calc(var(--animation-order, 0) * 0.1s);
+  }
+
+  .loading-text {
+    animation: loading-pulse 2s ease-in-out;
+  }
+
+  @keyframes loading-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Custom typography component for Inter */
+  .font-p {
+    overflow-wrap: break-word;
+    font-family: var(--font-inter), Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0;
+  }
+
+  @media (min-width: 768px) {
+    .font-p {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* Custom display font utility */
+  .font-display {
+    font-family: var(--font-druk), var(--font-inter), Helvetica, sans-serif;
+    font-size: 6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.8;
+    letter-spacing: 0;
+    color: rgb(231 231 231 / var(--tw-text-opacity, 1));
+  }
+}
+
+/* Fonts: Include font-face for custom fonts */
+@font-face {
+  font-family: 'Druk';
+  src: url('/fonts/DrukCondensed-Super.woff2') format('woff2'); /* Replace with correct path */
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+/* Add additional font-face declarations if you use multiple weights */

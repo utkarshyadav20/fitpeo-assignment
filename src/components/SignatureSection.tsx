@@ -15,6 +15,7 @@ const SignatoriesSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [startCount, setStartCount] = useState(false);
+  const [startCount2, setStartCount2] = useState(false);
 
   const ukSignatoriesCount = 512;
   const globalSupportersCount = 661; 
@@ -272,6 +273,7 @@ const SignatoriesSection: React.FC = () => {
         if (entry.isIntersecting) {
           setIsVisible(true);
           setStartCount(true);
+          setStartCount2(true);
         }
       },
       { threshold: 0.1 } 
@@ -354,7 +356,7 @@ const SignatoriesSection: React.FC = () => {
               <div className="mb-8">
                 <span className="block font-normal max-w-fit text-l sm:text-3xl md:text-6xl  hero-text"> {/* Assuming hero-text for large # style */}
                   #
-                  {startCount ? (
+                  {startCount2? (
                     <CountUp start={0} end={globalSupportersCount} duration={2.5} separator="" />
                   ) : (
                     '0'

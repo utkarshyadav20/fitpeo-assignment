@@ -62,7 +62,7 @@ const DonationSectionFinal: React.FC = () => {
         </div>
 
         <div
-          className={`flex flex-col sm:flex-row flex-wrap items-center gap-3 sm:gap-4
+          className={`flex  flex-row sm:flex-row flex-wrap items-center gap-3 sm:gap-4
                      transition-all duration-700 ease-out transform delay-[400ms] ${ // Added delay
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}

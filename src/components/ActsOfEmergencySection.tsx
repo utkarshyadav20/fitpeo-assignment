@@ -66,7 +66,7 @@ const ActsOfEmergencySection: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex items-start justify-between px-6 py-20 bg-black">
+    <section ref={sectionRef} className="min-h-screen flex flex-col md:flex-row  items-start justify-between px-6 py-20 bg-black">
       <div className="w-full md:w-1/2 lg:w-2/5 md:sticky md:top-24 self-start md:pr-8 lg:pr-12 order-1 mb-12 md:mb-0 text-center md:text-left">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-2xl font-bold text-white">
